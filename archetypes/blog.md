@@ -1,6 +1,7 @@
 +++
 title = "{{ replace .Name "-" " " | title }}"
 date = "{{ .Date }}"
+url = "/{{ .Date.Year }}/{{ .Date.Format "01" }}/{{ .Date.Format "02" }}/{{ replace .Name " " "-" }}/"
 
 #
 # description is optional
