@@ -11,10 +11,23 @@
 {{ end }}{{ end }}
 <content>
   {{ .Content }}
+
 </content>
-<p>
-  {{ range (.GetTerms "tags") }}
-  <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
-  {{ end }}
-</p>
+
+<!-- Navigation Links -->
+<div style="display: flex; justify-content:
+space-between; margin-top: 2em;">
+  <div>
+    {{ with .PrevInSection }}
+      <a href="{{ .Permalink }}" style="font: italic, serif; font-size: smaller; font-weight: bold;">Prev: {{ .Title }}</a>
+    {{ end }}
+  </div>
+  <div>
+    {{ with .NextInSection }}
+      <a href="{{ .Permalink }}" style="font: italic, serif; font-size: smaller; font-weight: bold;">Next: {{ .Title }}</a>
+    {{ end }}
+  </div>
+</div>
+
+
 {{ end }}
